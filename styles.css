@@ -334,6 +334,9 @@ details p {
 }
 
 @media (max-width: 600px) {
+  .container {
+    padding: 0 1rem;
+  }
 	.panel {
 		padding: 1.4rem 1.1rem 1.6rem;
 	}

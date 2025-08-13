@@ -34,46 +34,46 @@
 	</section>
 
 	<main class="main-content container">
-			<section id="converter" class="panel">
-				<h3>Conversor Pace ↔ Velocidade (Esteira)</h3>
-				<p class="panel-desc">Converta pace (min/km ou min/milha) em velocidade (km/h) ou defina a velocidade para ver o pace correspondente.</p>
-				<form id="convertForm" class="convert-form" novalidate>
-					<fieldset class="convert-group pace-group">
-						<legend>Pace → Velocidade</legend>
-						<div class="field">
-							<label for="paceText">Pace</label>
-							<input id="paceText" type="text" placeholder="Ex: 5:30" />
-						</div>
-						<div class="field">
-							<label for="paceType">Tipo</label>
-							<select id="paceType">
-								<option value="per_km">min/km</option>
-								<option value="per_mile">min/milha</option>
-							</select>
-						</div>
-						<div class="actions inline">
-							<button type="button" id="btnPaceToSpeed" class="btn btn-primary full">Calcular</button>
-						</div>
-					</fieldset>
-					<div class="convert-separator" aria-hidden="true">
-					</div>
-					<fieldset class="convert-group speed-group">
-						<legend>Velocidade → Pace</legend>
-						<div class="field">
-							<label for="speed">Velocidade (km/h)</label>
-							<input id="speed" type="number" step="0.01" min="0" placeholder="Ex: 12" />
-						</div>
-						<div class="field">
-							<label for="incline">Inclinação (%) <span class="hint">(opcional)</span></label>
-							<input id="incline" type="number" step="0.5" min="0" max="30" placeholder="0" />
-						</div>
-						<div class="actions inline">
-							<button type="button" id="btnSpeedToPace" class="btn btn-primary full">Calcular</button>
-						</div>
-					</fieldset>
-					<div id="convertResults" class="results hidden" aria-live="polite"></div>
-				</form>
-			</section>
+    <section id="converter" class="panel">
+      <h3>Conversor Pace ↔ Velocidade (Esteira)</h3>
+      <p class="panel-desc">Converta pace (min/km ou min/milha) em velocidade (km/h) ou defina a velocidade para ver o pace correspondente.</p>
+      <form id="convertForm" class="convert-form" novalidate>
+        <fieldset class="convert-group pace-group">
+          <legend>Pace → Velocidade</legend>
+          <div class="field">
+            <label for="paceText">Pace</label>
+            <input id="paceText" type="text" placeholder="Ex: 5:30" />
+          </div>
+          <div class="field">
+            <label for="paceType">Tipo</label>
+            <select id="paceType">
+              <option value="per_km">min/km</option>
+              <option value="per_mile">min/milha</option>
+            </select>
+          </div>
+          <div class="actions inline">
+            <button type="button" id="btnPaceToSpeed" class="btn btn-primary full">Calcular</button>
+          </div>
+        </fieldset>
+        <div class="convert-separator" aria-hidden="true">
+        </div>
+        <fieldset class="convert-group speed-group">
+          <legend>Velocidade → Pace</legend>
+          <div class="field">
+            <label for="speed">Velocidade (km/h)</label>
+            <input id="speed" type="number" step="0.01" min="0" placeholder="Ex: 12" />
+          </div>
+          <div class="field">
+            <label for="incline">Inclinação (%) <span class="hint">(opcional)</span></label>
+            <input id="incline" type="number" step="0.5" min="0" max="30" placeholder="0" />
+          </div>
+          <div class="actions inline">
+            <button type="button" id="btnSpeedToPace" class="btn btn-primary full">Calcular</button>
+          </div>
+        </fieldset>
+        <div id="convertResults" class="results hidden" aria-live="polite"></div>
+      </form>
+    </section>
 		<section id="calc-pace" class="panel">
 			<h3>Calculadora de Pace</h3>
 			<p class="panel-desc">Informe a distância e o tempo total para obter o pace e a velocidade média.</p>

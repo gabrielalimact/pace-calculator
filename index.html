@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Calculadora de Pace & Velocidade de Esteira</title>
+	<meta name="description" content="Calcule seu pace de corrida e converta em velocidade de esteira (km/h) rapidamente. Ferramenta gratuita e fácil de usar." />
+	<link rel="stylesheet" href="styles.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<h1 class="logo">Pace<span>Calc</span></h1>
+			<nav class="main-nav" aria-label="principal">
+				<a href="#calc-pace">Calcular Pace</a>
+				<a href="#converter">Converter Pace & Esteira</a>
+				<a href="#faq">FAQ</a>
+			</nav>
+		</div>
+	</header>
+
+	<section class="hero">
+		<div class="container hero-inner">
+			<div class="hero-text">
+				<h2>Calcule seu Pace e Velocidade de Esteira</h2>
+				<p>Descubra seu ritmo, transforme pace em km/h (ou o contrário) e planeje treinos e provas com precisão.</p>
+				<a href="#converter" class="btn btn-primary">Começar Agora</a>
+			</div>
+			
+		</div>
+	</section>
+
+	<main class="main-content container">
+			<section id="converter" class="panel">
+				<h3>Conversor Pace ↔ Velocidade (Esteira)</h3>
+				<p class="panel-desc">Converta pace (min/km ou min/milha) em velocidade (km/h) ou defina a velocidade para ver o pace correspondente.</p>
+				<form id="convertForm" class="convert-form" novalidate>
+					<fieldset class="convert-group pace-group">
+						<legend>Pace → Velocidade</legend>
+						<div class="field">
+							<label for="paceText">Pace</label>
+							<input id="paceText" type="text" placeholder="Ex: 5:30" />
+						</div>
+						<div class="field">
+							<label for="paceType">Tipo</label>
+							<select id="paceType">
+								<option value="per_km">min/km</option>
+								<option value="per_mile">min/milha</option>
+							</select>
+						</div>
+						<div class="actions inline">
+							<button type="button" id="btnPaceToSpeed" class="btn btn-primary full">Calcular</button>
+						</div>
+					</fieldset>
+					<div class="convert-separator" aria-hidden="true">
+					</div>
+					<fieldset class="convert-group speed-group">
+						<legend>Velocidade → Pace</legend>
+						<div class="field">
+							<label for="speed">Velocidade (km/h)</label>
+							<input id="speed" type="number" step="0.01" min="0" placeholder="Ex: 12" />
+						</div>
+						<div class="field">
+							<label for="incline">Inclinação (%) <span class="hint">(opcional)</span></label>
+							<input id="incline" type="number" step="0.5" min="0" max="30" placeholder="0" />
+						</div>
+						<div class="actions inline">
+							<button type="button" id="btnSpeedToPace" class="btn btn-primary full">Calcular</button>
+						</div>
+					</fieldset>
+					<div id="convertResults" class="results hidden" aria-live="polite"></div>
+				</form>
+			</section>
+		<section id="calc-pace" class="panel">
+			<h3>Calculadora de Pace</h3>
+			<p class="panel-desc">Informe a distância e o tempo total para obter o pace e a velocidade média.</p>
+			<form id="paceForm" class="grid-form" novalidate>
+				<div class="field">
+					<label for="distance">Distância</label>
+					<input type="number" step="0.01" min="0" id="distance" required placeholder="Ex: 10" />
+				</div>
+				<div class="field">
+					<label for="distanceUnit">Unidade</label>
+					<select id="distanceUnit">
+						<option value="km">km</option>
+						<option value="m">metros</option>
+						<option value="mi">milhas</option>
+					</select>
+				</div>
+				
+				<div class="field">
+					<label for="orTimeText">Tempo (texto)</label>
+					<input id="orTimeText" type="text" placeholder="Ex: 45:32 ou 1:05:10" />
+				</div>
+				<div class="actions">
+					<button type="submit" class="btn btn-primary full">Calcular Pace</button>
+				</div>
+			</form>
+			<div id="paceResults" class="results hidden" aria-live="polite"></div>
+		</section>
+    <div class="hero-extra" aria-hidden="true">
+      <div class="stat-card"><span class="stat-label">5K</span><span id="stat5k" class="stat-value">–:––</span></div>
+      <div class="stat-card"><span class="stat-label">10K</span><span id="stat10k" class="stat-value">–:––</span></div>
+      <div class="stat-card"><span class="stat-label">21K</span><span id="stat21k" class="stat-value">–:––</span></div>
+      <div class="stat-card"><span class="stat-label">42K</span><span id="stat42k" class="stat-value">–:––</span></div>
+    </div>
+
+
+
+		<section id="faq" class="panel">
+			<h3>FAQ</h3>
+			<details open>
+				<summary>O que é pace?</summary>
+				<p>Pace é o tempo que você leva para percorrer 1 km (ou 1 milha). Ex: 5:00 min/km significa que você percorre 1 km em 5 minutos.</p>
+			</details>
+			<details>
+				<summary>Como converter pace em km/h?</summary>
+				<p>Velocidade (km/h) = 60 ÷ (minutos por km). Ex: pace 5:00 → velocidade 12 km/h.</p>
+			</details>
+			<details>
+				<summary>Como converter km/h em pace?</summary>
+				<p>Pace (min/km) = 60 ÷ velocidade. Ex: 10 km/h → 6:00 min/km.</p>
+			</details>
+			<details>
+				<summary>Inclinação da esteira altera o pace?</summary>
+				<p>A inclinação não muda a relação matemática entre pace e km/h, mas aumenta o esforço fisiológico. Indicamos 1% para simular resistência do ar externa.</p>
+			</details>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-inner">
+      <p>Gabriela Cena &copy; 2025</p>
+			<p>Feito com ❤ para corredores. Código aberto.</p>
+			<p class="tiny">Aviso: resultados aproximados. Consulte um profissional para planos de treino.</p>
+		</div>
+	</footer>
+
+	<script src="script.js" defer></script>
+</body>
+</html>
